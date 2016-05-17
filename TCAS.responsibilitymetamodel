@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<responsibilityMetaModel:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:responsibilityMetaModel="http://www.example.org/responsibilityMetaModel" name="TCAS">
+  <resources name="RA notification" critical="true" criticalityCount="5" requiredBy="//@relations.20 //@relations.24" producedBy="//@relations.4"/>
+  <resources name="Additional RA" criticalityCount="1" requiredBy="//@relations.26" producedBy="//@relations.25"/>
+  <responsibilities name="Negotiate RA with intruder" referencedBy="//@relations.52" requiredActor="//@relations.0 //@relations.1"/>
+  <responsibilities name="Report RA" enabled="false" referencedBy="//@relations.51" requiredActor="//@relations.2 //@relations.3"/>
+  <responsibilities name="Generate RA" criticalityCount="5" referencedBy="//@relations.10" producedResource="//@relations.4" requiredActor="//@relations.5" subResponsibility="//@relations.69"/>
+  <responsibilities name="Interogate nearby transponders" critical="true" criticalityCount="8" referencedBy="//@relations.7" requiredActor="//@relations.6" superResponsibility="//@relations.17 //@relations.18"/>
+  <responsibilities name="Generate TA" referencedBy="//@relations.9" requiredActor="//@relations.8" subResponsibility="//@relations.18"/>
+  <responsibilities name="Regulate / Enforce TCAS standards" referencedBy="//@relations.13" requiredActor="//@relations.12" heldBy="//@relations.11"/>
+  <responsibilities name="Train ATC, report incidents etc." referencedBy="//@relations.16" requiredActor="//@relations.14 //@relations.70" heldBy="//@relations.15"/>
+  <responsibilities name="Threat Detection" criticalityCount="6" referencedBy="//@relations.53" requiredActor="//@relations.63" superResponsibility="//@relations.69" subResponsibility="//@relations.17"/>
+  <responsibilities name="Respond &quot;promptly and accurately&quot; within 5 seconds" criticalityCount="2" referencedBy="//@relations.19" requiredResource="//@relations.20" requiredActor="//@relations.22" heldBy="//@relations.21" superResponsibility="//@relations.46"/>
+  <responsibilities name="Generate subsequent RA" criticalityCount="1" requiredResource="//@relations.24" producedResource="//@relations.25" requiredActor="//@relations.23"/>
+  <responsibilities name="Respond within 2.5 seconds" referencedBy="//@relations.29" requiredResource="//@relations.26" requiredActor="//@relations.27" heldBy="//@relations.28"/>
+  <responsibilities name="Avoid maneovers contary to RA" referencedBy="//@relations.32" requiredActor="//@relations.31" heldBy="//@relations.30" subResponsibility="//@relations.36 //@relations.38"/>
+  <responsibilities name="Update location and monitor RA" referencedBy="//@relations.35" requiredActor="//@relations.33" heldBy="//@relations.34"/>
+  <responsibilities name="Do not follow ATC, if contary to RA" criticalityCount="2" referencedBy="//@relations.37" requiredActor="//@relations.65" heldBy="//@relations.66" superResponsibility="//@relations.36 //@relations.58"/>
+  <responsibilities name="If RA violates operating rules, follow RA with minimum rule deviation" criticalityCount="1" referencedBy="//@relations.39" requiredActor="//@relations.64" heldBy="//@relations.67" superResponsibility="//@relations.38"/>
+  <responsibilities name="&quot;Ensure safe flight&quot;" referencedBy="//@relations.41" heldBy="//@relations.40"/>
+  <responsibilities name="Provide suitable TCAS pilot training" referencedBy="//@relations.45" requiredActor="//@relations.42 //@relations.43 //@relations.44" heldBy="//@relations.68"/>
+  <responsibilities name="Inform ATC of RA" criticalityCount="1" referencedBy="//@relations.50" requiredActor="//@relations.48 //@relations.49" heldBy="//@relations.47" superResponsibility="//@relations.55" subResponsibility="//@relations.46"/>
+  <responsibilities name="Acknowledge RA; await resolution" referencedBy="//@relations.54" requiredActor="//@relations.56" heldBy="//@relations.57" subResponsibility="//@relations.55"/>
+  <responsibilities name="Inform ATC immediately if unable to comply due to RA" referencedBy="//@relations.62" requiredActor="//@relations.60 //@relations.61" heldBy="//@relations.59" subResponsibility="//@relations.58"/>
+  <actors name="ATC" criticalityCount="4" requiredBy="//@relations.3 //@relations.49 //@relations.56 //@relations.60 //@relations.70" heldResponsibility="//@relations.57"/>
+  <actors name="TCAS" critical="true" criticalityCount="10" requiredBy="//@relations.1 //@relations.2 //@relations.5 //@relations.6 //@relations.8 //@relations.23 //@relations.63"/>
+  <actors name="Intruder TCAS" criticalityCount="1" requiredBy="//@relations.0"/>
+  <actors name="PF" criticalityCount="9" requiredBy="//@relations.22 //@relations.27 //@relations.31 //@relations.42 //@relations.48 //@relations.61 //@relations.64 //@relations.65" heldResponsibility="//@relations.21 //@relations.28 //@relations.30 //@relations.40 //@relations.47 //@relations.59 //@relations.66 //@relations.67"/>
+  <actors name="PNF" criticalityCount="2" requiredBy="//@relations.33 //@relations.43" heldResponsibility="//@relations.34"/>
+  <actors name="CAA" criticalityCount="1" requiredBy="//@relations.12" heldResponsibility="//@relations.11"/>
+  <actors name="ANSP" criticalityCount="1" requiredBy="//@relations.14" heldResponsibility="//@relations.15"/>
+  <actors name="Operator" criticalityCount="1" requiredBy="//@relations.44" heldResponsibility="//@relations.68"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.0" actor="//@actors.2"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.0" actor="//@actors.1"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.1" actor="//@actors.1"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.1" actor="//@actors.0"/>
+  <relations xsi:type="responsibilityMetaModel:resourceProducedRelationship" responsibility="//@responsibilities.2" resource="//@resources.0"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.2" actor="//@actors.1"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.3" actor="//@actors.1"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.0" entity="//@responsibilities.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.4" actor="//@actors.1"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.0" entity="//@responsibilities.4"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.0" entity="//@responsibilities.2"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.5" actor="//@actors.5"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.5" actor="//@actors.5"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.0" entity="//@responsibilities.5"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.6" actor="//@actors.6"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.6" actor="//@actors.6"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.0" entity="//@responsibilities.6"/>
+  <relations xsi:type="responsibilityMetaModel:responsibilityRequiredRelationship" subResponsibility="//@responsibilities.3" superResponsibility="//@responsibilities.7"/>
+  <relations xsi:type="responsibilityMetaModel:responsibilityRequiredRelationship" subResponsibility="//@responsibilities.3" superResponsibility="//@responsibilities.4"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.1" entity="//@responsibilities.8"/>
+  <relations xsi:type="responsibilityMetaModel:resourceRequiredRelationship" responsibility="//@responsibilities.8" resource="//@resources.0"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.8" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.8" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.9" actor="//@actors.1"/>
+  <relations xsi:type="responsibilityMetaModel:resourceRequiredRelationship" responsibility="//@responsibilities.9" resource="//@resources.0"/>
+  <relations xsi:type="responsibilityMetaModel:resourceProducedRelationship" responsibility="//@responsibilities.9" resource="//@resources.1"/>
+  <relations xsi:type="responsibilityMetaModel:resourceRequiredRelationship" responsibility="//@responsibilities.10" resource="//@resources.1"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.10" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.10" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.1" entity="//@responsibilities.10"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.11" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.11" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.2" entity="//@responsibilities.11"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.12" actor="//@actors.4"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.12" actor="//@actors.4"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.2" entity="//@responsibilities.12"/>
+  <relations xsi:type="responsibilityMetaModel:responsibilityRequiredRelationship" subResponsibility="//@responsibilities.13" superResponsibility="//@responsibilities.11"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.2" entity="//@responsibilities.13"/>
+  <relations xsi:type="responsibilityMetaModel:responsibilityRequiredRelationship" subResponsibility="//@responsibilities.14" superResponsibility="//@responsibilities.11"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.2" entity="//@responsibilities.14"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.15" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.2" entity="//@responsibilities.15"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.16" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.16" actor="//@actors.4"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.16" actor="//@actors.7"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.2" entity="//@responsibilities.16"/>
+  <relations xsi:type="responsibilityMetaModel:responsibilityRequiredRelationship" subResponsibility="//@responsibilities.8" superResponsibility="//@responsibilities.17"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.17" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.17" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.17" actor="//@actors.0"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.1" entity="//@responsibilities.17"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.0" entity="//@responsibilities.1"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.0" entity="//@responsibilities.0"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.0" entity="//@responsibilities.7"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.3" entity="//@responsibilities.18"/>
+  <relations xsi:type="responsibilityMetaModel:responsibilityRequiredRelationship" subResponsibility="//@responsibilities.17" superResponsibility="//@responsibilities.18"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.18" actor="//@actors.0"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.18" actor="//@actors.0"/>
+  <relations xsi:type="responsibilityMetaModel:responsibilityRequiredRelationship" subResponsibility="//@responsibilities.13" superResponsibility="//@responsibilities.19"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.19" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.19" actor="//@actors.0"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.19" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.3" entity="//@responsibilities.19"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.7" actor="//@actors.1"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.14" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.13" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.13" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.14" actor="//@actors.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.16" actor="//@actors.7"/>
+  <relations xsi:type="responsibilityMetaModel:responsibilityRequiredRelationship" subResponsibility="//@responsibilities.7" superResponsibility="//@responsibilities.2"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.6" actor="//@actors.0"/>
+  <sources name="Airborne Collision Avoidance System (ACAS) Manual, Chapter 3" author="ICAO" attributedTo="//@relations.7 //@relations.9 //@relations.10 //@relations.13 //@relations.16 //@relations.51 //@relations.52 //@relations.53"/>
+  <sources name="Airborne Collision Avoidance System (ACAS) Manual, Chapter 4" author="ICAO" attributedTo="//@relations.19 //@relations.29 //@relations.50"/>
+  <sources name="Airborne Collision Avoidance System (ACAS) Manual, Chapter 5" author="ICAO" attributedTo="//@relations.32 //@relations.35 //@relations.37 //@relations.39 //@relations.41 //@relations.45"/>
+  <sources name="Airborne Collision Avoidance System (ACAS) Manual, Chapter 6" author="ICAO" attributedTo="//@relations.54 //@relations.62"/>
+</responsibilityMetaModel:Scenario>
