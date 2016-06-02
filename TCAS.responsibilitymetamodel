@@ -3,6 +3,7 @@
   <resources name="RA notification" critical="true" criticalityCount="5" requiredBy="//@relations.19 //@relations.23" producedBy="//@relations.4"/>
   <resources name="Additional RA" criticalityCount="1" requiredBy="//@relations.25" producedBy="//@relations.24"/>
   <resources name="TA notification" requiredBy="//@relations.74" producedBy="//@relations.68"/>
+  <resources name="Conflict Alert" requiredBy="//@relations.86" producedBy="//@relations.84"/>
   <responsibilities name="Negotiate RA with intruder" referencedBy="//@relations.51" requiredActor="//@relations.0 //@relations.1"/>
   <responsibilities name="Report RA" enabled="false" referencedBy="//@relations.50" requiredActor="//@relations.2 //@relations.3"/>
   <responsibilities name="Generate RA" criticalityCount="5" referencedBy="//@relations.10" producedResource="//@relations.4" requiredActor="//@relations.5" subResponsibility="//@relations.73"/>
@@ -25,15 +26,18 @@
   <responsibilities name="Design and produce TCAS" requiredActor="//@relations.70" heldBy="//@relations.78" producedActor="//@relations.71 //@relations.72"/>
   <responsibilities name="Identify nearby aircraft" referencedBy="//@relations.75" requiredResource="//@relations.74" requiredActor="//@relations.76" heldBy="//@relations.77"/>
   <responsibilities name="See and Avoid" referencedBy="//@relations.82" requiredActor="//@relations.81 //@relations.83" heldBy="//@relations.80" superResponsibility="//@relations.79"/>
-  <actors name="ATC" criticalityCount="4" requiredBy="//@relations.3 //@relations.48 //@relations.55 //@relations.59 //@relations.67" heldResponsibility="//@relations.56"/>
+  <responsibilities name="Generate STCAs" referencedBy="//@relations.89" producedResource="//@relations.84" requiredActor="//@relations.85"/>
+  <responsibilities name="Address potential conflict" referencedBy="//@relations.90" requiredResource="//@relations.86" requiredActor="//@relations.88 //@relations.91" heldBy="//@relations.87"/>
+  <actors name="ATC" criticalityCount="4" requiredBy="//@relations.3 //@relations.48 //@relations.55 //@relations.59 //@relations.67 //@relations.88" heldResponsibility="//@relations.56 //@relations.87"/>
   <actors name="TCAS" critical="true" criticalityCount="10" requiredBy="//@relations.1 //@relations.2 //@relations.5 //@relations.6 //@relations.8 //@relations.22" producedBy="//@relations.72"/>
   <actors name="Intruder TCAS" criticalityCount="1" requiredBy="//@relations.0" producedBy="//@relations.71"/>
-  <actors name="PF" criticalityCount="9" requiredBy="//@relations.21 //@relations.26 //@relations.30 //@relations.41 //@relations.47 //@relations.60 //@relations.62 //@relations.63 //@relations.76 //@relations.81" heldResponsibility="//@relations.20 //@relations.27 //@relations.29 //@relations.39 //@relations.46 //@relations.58 //@relations.64 //@relations.65 //@relations.77 //@relations.80"/>
+  <actors name="PF" criticalityCount="9" requiredBy="//@relations.21 //@relations.26 //@relations.30 //@relations.41 //@relations.47 //@relations.60 //@relations.62 //@relations.63 //@relations.76 //@relations.81 //@relations.91" heldResponsibility="//@relations.20 //@relations.27 //@relations.29 //@relations.39 //@relations.46 //@relations.58 //@relations.64 //@relations.65 //@relations.77 //@relations.80"/>
   <actors name="PNF" criticalityCount="2" requiredBy="//@relations.32 //@relations.42 //@relations.83" heldResponsibility="//@relations.33"/>
   <actors name="CAA" criticalityCount="1" requiredBy="//@relations.12" heldResponsibility="//@relations.11"/>
   <actors name="ANSP" criticalityCount="1" requiredBy="//@relations.14" heldResponsibility="//@relations.15"/>
   <actors name="Operator" criticalityCount="1" requiredBy="//@relations.43" heldResponsibility="//@relations.66"/>
   <actors name="TCAS Manufacturer" requiredBy="//@relations.69 //@relations.70" heldResponsibility="//@relations.78"/>
+  <actors name="STCA System" requiredBy="//@relations.85"/>
   <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.0" actor="//@actors.2"/>
   <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.0" actor="//@actors.1"/>
   <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.1" actor="//@actors.1"/>
@@ -118,8 +122,17 @@
   <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.21" actor="//@actors.3"/>
   <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.2" entity="//@responsibilities.21"/>
   <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.21" actor="//@actors.4"/>
+  <relations xsi:type="responsibilityMetaModel:resourceProducedRelationship" responsibility="//@responsibilities.22" resource="//@resources.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.22" actor="//@actors.9"/>
+  <relations xsi:type="responsibilityMetaModel:resourceRequiredRelationship" responsibility="//@responsibilities.23" resource="//@resources.3"/>
+  <relations xsi:type="responsibilityMetaModel:actorHoldsRelationship" responsibility="//@responsibilities.23" actor="//@actors.0"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.23" actor="//@actors.0"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.4" entity="//@responsibilities.22"/>
+  <relations xsi:type="responsibilityMetaModel:attributionRelationship" source="//@sources.4" entity="//@responsibilities.23"/>
+  <relations xsi:type="responsibilityMetaModel:actorRequiredRelationship" responsibility="//@responsibilities.23" actor="//@actors.3"/>
   <sources name="Airborne Collision Avoidance System (ACAS) Manual, Chapter 3" author="ICAO" attributedTo="//@relations.7 //@relations.9 //@relations.10 //@relations.13 //@relations.16 //@relations.50 //@relations.51 //@relations.52"/>
   <sources name="Airborne Collision Avoidance System (ACAS) Manual, Chapter 4" author="ICAO" attributedTo="//@relations.18 //@relations.28 //@relations.49 //@relations.75"/>
   <sources name="Airborne Collision Avoidance System (ACAS) Manual, Chapter 5" author="ICAO" attributedTo="//@relations.31 //@relations.34 //@relations.36 //@relations.38 //@relations.40 //@relations.44 //@relations.82"/>
   <sources name="Airborne Collision Avoidance System (ACAS) Manual, Chapter 6" author="ICAO" attributedTo="//@relations.53 //@relations.61"/>
+  <sources name="Eurocontrol Specification for Short Term Conflict Alert" attributedTo="//@relations.89 //@relations.90"/>
 </responsibilityMetaModel:Scenario>
